@@ -13,11 +13,20 @@
 2. ⚙️ [Tech Stack](#tech-stack)
 3. 🔋 [Features](#features)
 4. 🤸 [Quick Start](#quick-start)
+5. 📲 [Download apk](#download-apk)
+6. 🕸️ [Snippets](#snippets) 
 
 ## <a name="introduction">🤖 Introduction</a>
 
+<img src="https://github.com/user-attachments/assets/bb8b8f9f-028a-4227-95de-65935dca3b7c" height="500" >
+<img src="https://github.com/user-attachments/assets/33ffaf74-2bcf-4db7-a1b9-04bd00a2327d" height="500" >
+<img src="https://github.com/user-attachments/assets/9d516024-2536-44b1-96f6-3cc952c607f8" height="500" >
+<img src="https://github.com/user-attachments/assets/0c2882a0-3ba4-4e8a-8278-0764c6b23cb3" height="500" >
+
+
 Built with React Native for seamless user experiences, Animatable for captivating animations, and integrated with the dependable backend systems of Appwrite, 
 this app showcases impressive design and functionality, enabling seamless sharing of AI videos within the community.
+
 
 ## <a name="tech-stack">⚙️ Tech Stack</a>
 
@@ -88,6 +97,11 @@ npm start
 **Expo Go**
 
 Download the [Expo Go](https://expo.dev/go) app onto your device, then use it to scan the QR code from Terminal and run.
+
+##  <a name="download-apk">Download app on adroid</a>
+https://expo.dev/accounts/thapa0/projects/thapa-app/builds/005a9447-73e3-4b78-aefd-6598615025c2
+
+https://drive.google.com/file/d/1Jy8-ZFNghpyVIyiMCIFFPkuABQZ80Hbg/view?usp=drive_link (drive link for apk file)
 
 
 ## <a name="snippets">🕸️ Snippets</a>
