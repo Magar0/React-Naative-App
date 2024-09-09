@@ -47,11 +47,7 @@ const VideoCard = ({
       },
     ]);
   };
-  const {
-    bookmark,
-    setBookmark,
-    user: { $id: userId },
-  } = useGlobalContext();
+  const { bookmark, setBookmark, user } = useGlobalContext();
 
   const handleBookmark = async () => {
     setLoading(true);
@@ -64,7 +60,7 @@ const VideoCard = ({
         //adding bookmark
         newBookmarkList = [...bookmark, $id];
       }
-      await addBookmark(userId, newBookmarkList);
+      await addBookmark(user.$id, newBookmarkList);
       setBookmark(newBookmarkList);
     } catch (error) {
       throw new Error(error.message);
