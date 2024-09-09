@@ -53,7 +53,7 @@ const VideoCard = ({
     setLoading(true);
     try {
       let newBookmarkList;
-      if (bookmark.includes($id)) {
+      if (bookmark?.includes($id)) {
         //removing bookmark
         newBookmarkList = bookmark.filter((ele) => ele !== $id);
       } else {
@@ -103,7 +103,7 @@ const VideoCard = ({
               <Image
                 source={icons.bookmark}
                 className="w-5 h-5 mr-2"
-                tintColor={bookmark.includes($id) ? "green" : null}
+                tintColor={bookmark?.includes($id) ? "green" : null}
                 resizeMode="contain"
               />
             )}
@@ -123,7 +123,7 @@ const VideoCard = ({
       {play ? (
         <Video
           source={{ uri: video }}
-          className="w-52 h-72 rounded-[35px] mt-3 bg-white/10"
+          className="w-full h-72 rounded-[35px] mt-3 bg-white/10"
           resizeMode={ResizeMode.CONTAIN}
           useNativeControls
           shouldPlay

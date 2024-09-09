@@ -37,8 +37,15 @@ const Create = () => {
           : ImagePicker.MediaTypeOptions.Videos,
       allowsEditing: true,
       aspect: [4, 3],
-      quality: 1,
+      quality: 0.5,
     });
+    console.log("Breaks here");
+
+    console.log({ file_size: result.assets[0].fileSize });
+
+    if (result.assets[0].fileSize > 2200000) {
+      return Alert.alert("Error", "File size too large");
+    }
 
     if (!result.canceled) {
       if (selectType === "image") {

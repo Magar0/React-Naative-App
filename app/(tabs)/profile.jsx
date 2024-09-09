@@ -5,8 +5,9 @@ import {
   StatusBar,
   TouchableOpacity,
   Image,
+  RefreshControl,
 } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import EmptyState from "../../components/EmptyState";
 import { getUserPosts, signOut } from "../../lib/appwrite";
@@ -18,14 +19,23 @@ import InfoBox from "../../components/InfoBox";
 import { router } from "expo-router";
 
 const Profile = () => {
-  const { user, setUser, setIsLoggedIn } = useGlobalContext();
+  const { user, setUser, setIsLoggedIn, setBookmark } = useGlobalContext();
   const { data: posts, refetch } = useAppwrite(() => getUserPosts(user.$id));
+  const [refreshing, setRefreshing] = useState(false);
 
   const logout = async () => {
     await signOut();
     setUser(null);
     setIsLoggedIn(false);
+    setBookmark([]);
     router.replace("/sign-in");
+  };
+
+  const onRefresh = async () => {
+    setRefreshing(true);
+    //re call videos -> if any new videos appeared
+    await refetch();
+    setRefreshing(false);
   };
 
   return (
@@ -84,6 +94,9 @@ const Profile = () => {
             subtitle="No Videos Found for this search"
           />
         )}
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+        }
       />
       <StatusBar backgroundColor={"#161622"} barStyle={"light"} />
     </SafeAreaView>
