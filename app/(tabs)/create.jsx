@@ -43,7 +43,7 @@ const Create = () => {
 
     console.log({ file_size: result.assets[0].fileSize });
 
-    if (result.assets[0].fileSize > 2200000) {
+    if (result.assets[0].fileSize > 10000000) {
       return Alert.alert("Error", "File size too large");
     }
 
